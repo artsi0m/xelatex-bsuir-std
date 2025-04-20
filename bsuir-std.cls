@@ -5,7 +5,7 @@
 %%% End:
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{bsuir-std}[2024/12/16 Class conforming to BSUIR standard]
+\ProvidesClass{xelatex-bsuir-std/bsuir-std}[2024/12/16 Class conforming to BSUIR standard]
 
 \LoadClass[a4paper,14pt]{extarticle}
 
@@ -13,7 +13,8 @@
 % Пакеты %
 %%%%%%%%%%
 
-
+\RequirePackage{tabularray}
+\UseTblrLibrary{booktabs, siunitx, amsmath}
 
 \RequirePackage{tocloft} % Для настройки оглавления
 \RequirePackage{fontspec} % Если вы используете XeLaTeX или LuaLaTeX для работы с шрифтами
@@ -91,13 +92,13 @@
 
 % Отмена этих отступов внутри таблиц
 \usepackage{etoolbox}
-\AtBeginEnvironment{tabular}{%
+\AtBeginEnvironment{tblr}{%
   \setlength\abovedisplayskip{0pt}%
   \setlength\belowdisplayskip{0pt}%
   \setlength\abovedisplayshortskip{0pt}%
   \setlength\belowdisplayshortskip{0pt}%
 }
-\AtBeginEnvironment{longtable}{%
+\AtBeginEnvironment{longtblr}{%
   \setlength\abovedisplayskip{0pt}%
   \setlength\belowdisplayskip{0pt}%
   \setlength\abovedisplayshortskip{0pt}%
@@ -262,6 +263,6 @@
   % Автоматическая Замена `--` на endash
   \RequirePackage{xesearch}
   \UndoBoundary{-}
-  \SearchList{dash}{–}{--}
+  \SearchList{dash}{\textendash}{--}
 
 \fi
