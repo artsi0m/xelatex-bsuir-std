@@ -90,21 +90,6 @@
   \setlength\belowdisplayshortskip{18pt}%
 }
 
-% Отмена этих отступов внутри таблиц
-\usepackage{etoolbox}
-\AtBeginEnvironment{tblr}{%
-  \setlength\abovedisplayskip{0pt}%
-  \setlength\belowdisplayskip{0pt}%
-  \setlength\abovedisplayshortskip{0pt}%
-  \setlength\belowdisplayshortskip{0pt}%
-}
-\AtBeginEnvironment{longtblr}{%
-  \setlength\abovedisplayskip{0pt}%
-  \setlength\belowdisplayskip{0pt}%
-  \setlength\abovedisplayshortskip{0pt}%
-  \setlength\belowdisplayshortskip{0pt}%
-}
-
 % Чтобы автоматически заменять прямые кавычки " на «ёлочки»
 \DeclareQuoteStyle{russian}% 
   {\guillemotleft}% 
