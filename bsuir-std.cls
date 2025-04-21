@@ -58,8 +58,6 @@
 
 \RequirePackage{setspace}
 
-\RequirePackage{caption}
-
 \RequirePackage{lscape} % for rotated tables
 \RequirePackage{rotating}
 %%%%%%%
@@ -209,6 +207,21 @@
 \captionsetup[figure]{name={Рисунок},}
 \numberwithin{figure}{section}
 
+% Название таблиц  по стп 2024
+\DeclareCaptionFormat{bsuirtable}{%
+    \raggedright
+    \hangindent=6em% Отступ для последующих строк
+    \hangafter=1% Применять отступ после первой строки
+    #1#2#3%
+}
+\captionsetup[table]{
+    format=bsuirtable,
+    singlelinecheck=false,
+    labelsep=endash,
+    skip=1mm,
+    position=above,
+    parindent=0pt, % Убираем стандартный отступ
+}
 
 %%%%%%%%%%%%%%%%%%%
 % ifxetex section %
