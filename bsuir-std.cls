@@ -14,7 +14,7 @@
 %%%%%%%%%%
 
 \RequirePackage{tabularray}
-\UseTblrLibrary{booktabs, siunitx, amsmath}
+\UseTblrLibrary{counter, amsmath}
 
 \RequirePackage{tocloft} % Для настройки оглавления
 \RequirePackage{fontspec} % Если вы используете XeLaTeX или LuaLaTeX для работы с шрифтами
@@ -201,10 +201,13 @@
 {0pt}{18pt}{18pt}  % безымянные секции: 18pt до/после
 
 
-\numberwithin{equation}{section}
+\counterwithin{equation}{section}
 
 % Нумерация и подписи к рисункам
-\captionsetup[figure]{name={Рисунок},}
+\captionsetup[figure]{
+    name={Рисунок},
+    labelsep=endash,
+}
 \numberwithin{figure}{section}
 
 % Название таблиц  по стп 2024
@@ -223,7 +226,22 @@
     parindent=0pt, % Убираем стандартный отступ
 }
 
-\newcommand{\eqt}[1]{\centerline{$\displaystyle{#1}$}}
+\newcommand{\eqt}[1]{
+  \vbox{
+    \[
+      #1
+    \]
+  }
+}
+
+\newcommand{\neqt}[1]{
+  \vbox{
+    \begin{equation}
+      #1,
+    \end{equation}
+  }
+}
+
 
 %%%%%%%%%%%%%%%%%%%
 % ifxetex section %
