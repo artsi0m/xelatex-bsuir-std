@@ -223,6 +223,8 @@
     parindent=0pt, % Убираем стандартный отступ
 }
 
+\newcommand{\eqt}[1]{\centerline{$\displaystyle{#1}$}}
+
 %%%%%%%%%%%%%%%%%%%
 % ifxetex section %
 %%%%%%%%%%%%%%%%%%%
