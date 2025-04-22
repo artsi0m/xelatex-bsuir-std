@@ -237,7 +237,7 @@
 \newcommand{\neqt}[1]{
   \vbox{
     \begin{equation}
-      #1
+      #1,
     \end{equation}
   }
 }
