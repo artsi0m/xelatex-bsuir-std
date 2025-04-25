@@ -214,6 +214,7 @@
 \captionsetup[figure]{
     name={Рисунок},
     labelsep=endash,
+    justification=centering,
 }
 \numberwithin{figure}{section}
 
