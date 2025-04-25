@@ -33,7 +33,7 @@ jobs:
       - name: Prepare enviroment
         run: |
             apt-get -y update
-            apt-get -y install wget tar
+            apt-get -y install wget
             wget http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.8_all.deb
             apt-get install -y ./ttf-mscorefonts-installer_3.8_all.deb
 
@@ -42,17 +42,8 @@ jobs:
         run: |
           bash build.sh
 
-      - name: 'Tar files'
-        run: tar -czvf ./Out.tar.gz ./Out
-
       - name: 'Archive output'
         uses: actions/upload-artifact@v4
         with:
           name: archive-output
-          path: ./Out.tar.gz
-
-      - name: 'PDF artifact'
-        uses: actions/upload-artifact@v4
-        with:
-          name: pdf-output
-          path: ./Out/diploma_main.pdf
+          path: ./Out
