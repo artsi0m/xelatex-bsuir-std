@@ -26,6 +26,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
             repository: FileBin/xelatex-bsuir-std-example-diploma
+            submodules: recursive
             ref: main
 
       # Runs a single command using the runners shell
