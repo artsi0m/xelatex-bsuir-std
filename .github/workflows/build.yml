@@ -31,7 +31,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Prepare enviroment
         run: |
+            apt-get update
             apt-add-repository contrib non-free -y
+            apt-get install software-properties-common -y
             apt-get update
             apt-get install -y ttf-mscorefonts-installer
 
