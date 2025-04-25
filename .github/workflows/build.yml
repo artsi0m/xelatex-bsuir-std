@@ -33,7 +33,7 @@ jobs:
       - name: Prepare enviroment
         run: |
             apt-get -y update
-            apt-get -y install wget
+            apt-get -y install wget tar
             wget http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.8_all.deb
             apt-get install -y ./ttf-mscorefonts-installer_3.8_all.deb
 
