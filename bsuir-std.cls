@@ -57,9 +57,10 @@
 \RequirePackage{tocbasic}
 
 \RequirePackage{setspace}
-
+\RequirePackage{hyphenat}
 \RequirePackage{lscape} % for rotated tables
 \RequirePackage{rotating}
+
 %%%%%%%
 % СТП %
 %%%%%%%
@@ -72,6 +73,13 @@
 % Зачем: Отключает использование изменяемых межсловных пробелов.
 % Почему: Так не принято делать в текстах на русском языке.
 \frenchspacing
+
+\lefthyphenmin=2
+\righthyphenmin=2
+\tolerance=9999
+\emergencystretch=3pt
+\hyphenpenalty=5000
+\exhyphenpenalty=100
 
 % нумерация страниц справа
 \renewpagestyle{plain}{%
@@ -142,9 +150,9 @@
 \setlist[enumerate, 1]{
   label = \arabic* , % Поставить номер без точки
   nosep,   % У списков по СТП такой межстрочный интервал
-  itemindent = 15mm,
+  itemindent = *,
   labelindent = 12.5mm,
-  leftmargin = *,
+  leftmargin = 0mm,
 }
 
 \AddEnumerateCounter{\asbuk}{\russian@asbuk@alph}{щ} % section 8.1
@@ -152,15 +160,16 @@
 \setlist[enumerate, 2]{ % Второй уровень в нумерованных перечислениях
   label = \asbuk*) ,
   nosep,   % У списков по СТП такой межстрочный интервал
-  labelindent = \parindent,
+  labelindent = 25mm,
   leftmargin = *,
 }
 
 \setlist[itemize, 1]{ % Первый уровень в нумерованных перечислениях
   label = \textendash,
   nosep,   % У списков по СТП такой межстрочный интервал
+  itemindent = *,
   labelindent = 12.5mm,
-  leftmargin = *,
+  leftmargin = 0mm,
 }
 
 % Считать рисунки и таблицы в пределах глав.
@@ -182,8 +191,6 @@
 
 \titleformat{\subsubsection}[hang]
 {\normalfont\bfseries\raggedright}{\hspace{12.5mm}\thesubsubsection}{0.4em}{}
-
-
 
 \titleformat{name=\section,numberless}[block]
 {\normalfont\bfseries}{}{0.4em \centering}{\MakeUppercase}
@@ -207,6 +214,7 @@
 \captionsetup[figure]{
     name={Рисунок},
     labelsep=endash,
+    justification=centering,
 }
 \numberwithin{figure}{section}
 
