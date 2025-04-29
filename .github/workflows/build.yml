@@ -1,0 +1,49 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main", "feature/*" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest-full
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+        with:
+            repository: FileBin/xelatex-bsuir-std-example-diploma
+            submodules: recursive
+            ref: main
+
+      # Runs a single command using the runners shell
+      - name: Prepare enviroment
+        run: |
+            apt-get -y update
+            apt-get -y install wget
+            wget http://ftp.de.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.8_all.deb
+            apt-get install -y ./ttf-mscorefonts-installer_3.8_all.deb
+
+      # Runs a set of commands using the runners shell
+      - name: Build
+        run: |
+          bash build.sh
+
+      - name: 'Archive output'
+        uses: actions/upload-artifact@v4
+        with:
+          name: archive-output
+          path: ./Out
