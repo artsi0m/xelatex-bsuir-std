@@ -215,8 +215,20 @@
     name={Рисунок},
     labelsep=endash,
     justification=centering,
+    skip=18pt,
 }
 \numberwithin{figure}{section}
+
+% Обнуляем стандартные отступы LaTeX для figure
+\AtBeginEnvironment{figure}{%
+  \setlength{\intextsep}{0pt}      % Отступы внутри текста (для [h])
+  \setlength{\floatsep}{0pt}       % Между float'ами (для [t], [b])
+  \setlength{\textfloatsep}{0pt}   % Между float'ами и текстом
+  \setlength{\abovecaptionskip}{0pt} % Над подписью
+  \setlength{\belowcaptionskip}{0pt} % Под подписью
+}
+\BeforeBeginEnvironment{figure}{\vspace{18pt}}
+\AfterEndEnvironment{figure}{\vspace{7pt}}
 
 % Название таблиц  по стп 2024
 \DeclareCaptionFormat{bsuirtable}{%
