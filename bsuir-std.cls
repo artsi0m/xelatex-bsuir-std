@@ -77,8 +77,8 @@
 \lefthyphenmin=2
 \righthyphenmin=2
 \tolerance=9999
-\emergencystretch=3pt
-\hyphenpenalty=5000
+\emergencystretch=100pt
+\hyphenpenalty=10000
 \exhyphenpenalty=100
 
 % нумерация страниц справа
