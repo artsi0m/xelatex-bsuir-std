@@ -140,7 +140,14 @@
 
 
 % Приложение Л. СТП-2024
-\geometry{left=30mm, top=20mm, right=15mm, bottom=20mm}
+
+\geometry{left=25mm, top=10mm, right=13mm, bottom=15mm}
+
+% если будет \geometry{left=30mm, top=30mm, right=15mm, bottom=20mm}
+% то слева будет 35mm  
+% справа будет 17mm  
+% сверху будет 30mm
+% снизу будет 25mm
 
 % СТП-2024 Пункт 2.1.1
 % «абзацный отступ – 1,25 см»
