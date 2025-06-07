@@ -81,11 +81,10 @@
 \hyphenpenalty=10000
 \exhyphenpenalty=100
 
-% нумерация страниц справа
 \renewpagestyle{plain}{%
-\sethead{}{}{}
-\setfoot[\thepage][][]{}{}{{\thepage}}
-}%
+  \sethead{}{}{}  
+  \setfoot[\thepage][][]{}{}{\raisebox{2mm}\thepage}  
+}
 \pagestyle{plain}
 
 % Настройка отступов вокруг формул вне таблиц
@@ -141,12 +140,12 @@
 
 % Приложение Л. СТП-2024
 
-\geometry{left=25mm, top=10mm, right=13mm, bottom=15mm}
+\geometry{left=25mm, top=12mm, right=12mm, bottom=15mm}
 
-% если будет \geometry{left=30mm, top=30mm, right=15mm, bottom=20mm}
+% если будет \geometry{left=30mm, top=20mm, right=15mm, bottom=20mm}
 % то слева будет 35mm  
-% справа будет 17mm  
-% сверху будет 30mm
+% справа будет 18mm  
+% сверху будет 28mm
 % снизу будет 25mm
 
 % СТП-2024 Пункт 2.1.1
