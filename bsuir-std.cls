@@ -1,9 +1,3 @@
-%%% Local Variables:
-%%% coding: utf-8
-%%% mode: latex
-%%% TeX-engine: xetex
-%%% End:
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{xelatex-bsuir-std/bsuir-std}[2024/12/16 Class conforming to BSUIR standard]
 
@@ -331,3 +325,9 @@
   \SearchList{dash}{\textendash}{--}
 
 \fi
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End:
