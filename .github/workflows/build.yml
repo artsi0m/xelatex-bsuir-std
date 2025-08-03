@@ -29,9 +29,6 @@ jobs:
             submodules: recursive
             ref: main
 
-      - name: Checkout submodules
-        run: git submodule update --init --recursive
-
       # Runs a single command using the runners shell
       - name: Prepare enviroment
         run: |
