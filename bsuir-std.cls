@@ -51,9 +51,11 @@
 \RequirePackage{tocbasic}
 
 \RequirePackage{setspace}
-\RequirePackage{hyphenat}
+
 \RequirePackage{lscape} % for rotated tables
 \RequirePackage{rotating}
+
+\RequirePackage{hyphenat} % for disabling hyphenation (\nohyphen command)
 
 %%%%%%%
 % СТП %
@@ -264,6 +266,8 @@
     \par
   }
 }
+
+\DeclareCaptionTextFormat{new}{\nohyphens{#1}}
 
 \newcommand{\eqt}[1]{
   \vbox{
