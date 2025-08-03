@@ -321,7 +321,6 @@
   % - Не подгружать пакет geometry, отступы уже в соответсвии с приложением Л СТП 
   
   \setromanfont{Times New Roman}
-  \setmathfont{Cambria Math}
 
   % Автоматическая Замена `--` на endash
   \RequirePackage{xesearch}
